@@ -1,0 +1,22 @@
+package Ejercicio4;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Almacen<T extends Producto> {
+    private final List<? super T> elementos;
+
+    public Almacen() {
+        this.elementos = new ArrayList<>();
+    }
+
+    public void agregarProducto(T producto) {
+        elementos.add(producto);
+    }
+
+    public void imprimirElementos() {
+        for(Object elemento : elementos) {
+            System.out.println(elemento.toString());
+        }
+    }
+}
