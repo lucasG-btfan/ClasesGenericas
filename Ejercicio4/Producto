@@ -1,0 +1,44 @@
+package Ejercicio4;
+
+import java.util.Scanner;
+
+public class Producto {
+    private final String nombre;
+    private final int cantidad;
+
+    public Producto(String nombre, int cantidad) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "nombre='" + nombre + '\'' + ", cantidad=" + cantidad + '}';
+    }
+
+    public static void main(String[] args) {
+        String nombre;
+        int cantidad;
+        int a;
+        Almacen<Producto> almacen = new Almacen<>();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese la cantidad de productos que desea almacenar:");
+        a = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < a; i++) {
+            System.out.println("Ingrese el nombre del producto");
+            nombre = scanner.nextLine();
+            System.out.println("Ingrese la cantidad de " + nombre + " a ingresar:");
+            cantidad = scanner.nextInt();
+            scanner.nextLine();
+
+            Producto producto = new Producto(nombre, cantidad);
+            almacen.agregarProducto(producto);
+        }
+
+        System.out.println("\nElementos en el almacén:");
+        almacen.imprimirElementos();
+    }
+}
