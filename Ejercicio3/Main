@@ -1,0 +1,17 @@
+package Ejercicio3;
+
+public class Main {
+    public static void main(String[] args) {
+        Almacen almacen = new Almacen();
+
+        Producto alimentos = new Producto("Harina", 749.99);
+        Producto electronicos = new Producto("Televisor", 890000);
+        Producto ropa = new Producto("Camisa", 25000);
+
+        almacen.agregarProducto(alimentos);
+        almacen.agregarProducto(electronicos);
+        almacen.agregarProducto(ropa);
+
+        almacen.imprimirProductos();
+    }
+}
